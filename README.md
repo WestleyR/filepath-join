@@ -14,11 +14,19 @@ $ clib install WestleyR/filepath-join
 
 ```c
 #include <stdio.h>
+#include <stdlib.h>
 #include "filepath-join/filepath-join.h"
 
 int main() {
+    char* path = NULL;
 
-    printf("%s\n", filepath_join("%/%/%", "//hello/", "world", "///bar///"));
+    path = filepath_join("%/%/%", "//hello/", "world", "///dir///");
+    printf("%s\n", path);
+    free(path);
+
+    path = filepath_join("/%/%/%", "///home///", "user", "///dir///");
+    printf("%s\n", path);
+    free(path);
 
     return(0);
 }
@@ -35,6 +43,7 @@ Output:
 
 ```
 hello/world/bar
+/home/user/dir
 ```
 
 <br>

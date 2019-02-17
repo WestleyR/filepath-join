@@ -1,8 +1,8 @@
 // created by: WestleyR
 // email: westleyr@nym.hush.com
 // https://github.com/WestleyR/filepath-join
-// date: Feb 16, 2019
-// version-1.0.0-beta-2
+// date: Feb 17, 2019
+// version-1.0.0-beta-3
 //
 // The Clear BSD License
 //
@@ -15,6 +15,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "filepath-join.h"
 
@@ -36,7 +37,8 @@ char* removeSlash(char* path) {
 }
 
 char* filepath_join(const char *format, ...) {
-    char* path;
+    char *path = malloc(200 * sizeof(char));
+//    char* path;
     const char *p;
     va_list argp;
     char *s;
@@ -60,15 +62,16 @@ char* filepath_join(const char *format, ...) {
         size_t len = strlen(s);
         char *str2 = malloc(len + 1 + 1);
 
+
         str2[0] = slash;
         strcat(str2, s);
         str2[len + 1] = '\0';
         strcat(path, str2);
     }
+
     va_end(argp);
     return(path);
 }
-
 
 //
 // End filepath-join.c

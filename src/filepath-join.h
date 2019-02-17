@@ -1,8 +1,8 @@
 // created by: WestleyR
 // email: westleyr@nym.hush.com
 // https://github.com/WestleyR/filepath-join
-// date: Feb 16, 2019
-// version-1.0.0
+// date: Feb 17, 2019
+// version-1.0.1
 //
 // The Clear BSD License
 //
@@ -13,7 +13,7 @@
 //
 
 //extern char *itoa(int, char *, int);
-char* removeSlash(char* path);
+char* removeSlash(char*);
 char* filepath_join(const char *, ...);
 
 //

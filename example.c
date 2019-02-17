@@ -1,8 +1,8 @@
 // created by: WestleyR
 // email: westleyr@nym.hush.com
 // https://github.com/WestleyR/filepath-join
-// date: Feb 16, 2019
-// version-1.0.0
+// date: Feb 17, 2019
+// version-1.0.1
 //
 // The Clear BSD License
 //
@@ -12,14 +12,23 @@
 // This software is licensed under a Clear BSD License.
 //
 
-
+#include <stdlib.h>
 #include <stdio.h>
+
 #include "src/filepath-join.h"
 
 
 int main() {
+    char* path = NULL;
 
-    printf("%s\n", filepath_join("%/%/%", "//hello/", "world", "///bar///"));
+    path = filepath_join("%s/%s", "//hello/", "world");
+    printf("%s\n", path);
+    free(path);
+
+    path = filepath_join("/%/%/%", "///home///", "user", "///dir///");
+    printf("%s\n", path);
+    free(path);
+
 
     return(0);
 }
