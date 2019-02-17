@@ -19,7 +19,7 @@
 
 int main() {
 
-    printf("%s\n", filepath_join("%-%-%", "//hello/", "world", "///bar///"));
+    printf("%s\n", filepath_join("%/%/%", "//hello/", "world", "///bar///"));
 
     return(0);
 }
