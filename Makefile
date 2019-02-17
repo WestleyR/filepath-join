@@ -43,5 +43,9 @@ $(OBJS): $(SRC)
 .PHONY:
 clean:
 	rm -f *.o
+
+.PHONY:
+cleanall:
+	rm -f *.o
 	rm -f example
 

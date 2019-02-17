@@ -14,7 +14,7 @@ $ clib install WestleyR/filepath-join
 
 ```c
 #include <stdio.h>
-#include "src/filepath-join.h"
+#include "filepath-join/filepath-join.h"
 
 int main() {
 
@@ -23,6 +23,12 @@ int main() {
     return(0);
 }
 
+```
+
+Compile with `-I deps` flag:
+
+```
+gcc -I deps -o output ...
 ```
 
 Output:
