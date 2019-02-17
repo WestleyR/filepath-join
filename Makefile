@@ -23,7 +23,7 @@ TARGET = example
 # locate all the c files
 SRC  = $(wildcard src/*.c)
 
-OBJS = filepath_join.o example.o
+OBJS = filepath-join.o example.o
 
 .PHONY:
 all: $(TARGET)
@@ -36,7 +36,7 @@ $(TARGET): $(OBJS)
 # loop thrught all c files, turning them into object files
 .PHONY:
 $(OBJS): $(SRC)
-	$(CC) -c src/filepath_join.c
+	$(CC) -c src/filepath-join.c
 	$(CC) -c example.c
 
 

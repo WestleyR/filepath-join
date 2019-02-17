@@ -14,12 +14,12 @@
 
 
 #include <stdio.h>
-#include "src/filepath_join.h"
+#include "src/filepath-join.h"
 
 
 int main() {
 
-    printf("%s\n", filepath_join("%/%/%", "//hello/", "world", "///bar///"));
+    printf("%s\n", filepath_join("%-%-%", "//hello/", "world", "///bar///"));
 
     return(0);
 }

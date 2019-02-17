@@ -18,7 +18,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include "filepath_join.h"
+#include "filepath-join.h"
 
 char* removeSlash(char* path) {
     char *newPath = "";
