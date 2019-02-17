@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 #include "filepath-join.h"
 
@@ -62,11 +62,11 @@ char* filepath_join(const char *format, ...) {
         size_t len = strlen(s);
         char *str2 = malloc(len + 1 + 1);
 
-
         str2[0] = slash;
         strcat(str2, s);
         str2[len + 1] = '\0';
         strcat(path, str2);
+        slash = '\0';
     }
 
     va_end(argp);
