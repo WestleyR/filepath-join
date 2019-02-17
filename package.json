@@ -1,1 +1,16 @@
-foo
+{
+  "name": "filepath-join",
+  "version": "master",
+  "repo": "WestleyR/filepath-join",
+  "description": "Join file path like, golang filepath.Join()",
+  "keywords": [
+    "file",
+    "path",
+    "join",
+  ],
+  "license": "The Clear BSD License, WestleyR, All rights reserved.",
+  "src": [
+    "src/filepath-join.c",
+    "src/filepath-join.h"
+  ],
+}
