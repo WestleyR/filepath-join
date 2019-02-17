@@ -1,7 +1,7 @@
 // created by: WestleyR
 // email: westleyr@nym.hush.com
 // https://github.com/WestleyR/filepath-join
-// date: Feb 16, 2018
+// date: Feb 16, 2019
 // version-1.0.0
 //
 // The Clear BSD License

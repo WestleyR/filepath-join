@@ -1,3 +1,17 @@
+# Created by: WestleyR
+# email: westleyr@nym.hush.com
+# Date: Feb 16, 2019
+# https://github.com/WestleyR/filepath-join
+# version-1.0.0
+#
+# The Clear BSD License
+#
+# Copyright (c) 2019 WestleyR
+# All rights reserved.
+#
+# This software is licensed under a Clear BSD License.
+#
+
 # your c compiler
 CC = gcc
 
@@ -29,4 +43,5 @@ $(OBJS): $(SRC)
 .PHONY:
 clean:
 	rm -f *.o
+	rm -f example
 
