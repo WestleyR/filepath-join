@@ -2,7 +2,7 @@
 // email: westleyr@nym.hush.com
 // https://github.com/WestleyR/filepath-join
 // date: Feb 16, 2019
-// version-1.0.0-beta-1
+// version-1.0.0-beta-2
 //
 // The Clear BSD License
 //
@@ -12,8 +12,6 @@
 // This software is licensed under a Clear BSD License.
 //
 
-
-#include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
 #include <stdlib.h>
@@ -73,5 +71,5 @@ char* filepath_join(const char *format, ...) {
 
 
 //
-// End code.
+// End filepath-join.c
 //

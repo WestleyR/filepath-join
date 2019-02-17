@@ -12,11 +12,10 @@
 // This software is licensed under a Clear BSD License.
 //
 
-
-extern char *itoa(int, char *, int);
+//extern char *itoa(int, char *, int);
 char* removeSlash(char* path);
 char* filepath_join(const char *, ...);
 
 //
-// End Header
+// End filepath-join.h
 //
