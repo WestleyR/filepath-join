@@ -49,10 +49,10 @@ int main() {
 }
 ```
 
-Compile with `-I deps` flag:
+Compile by running `make`:
 
 ```
-gcc -I deps -o output ...
+make
 ```
 
 Output:
