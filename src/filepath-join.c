@@ -38,6 +38,7 @@ char* removeSlash(char* path) {
 
 char* filepath_join(const char *format, ...) {
     char *path = malloc(200 * sizeof(char));
+    path[0] = '\0';
 //    char* path;
     const char *p;
     va_list argp;
@@ -67,8 +68,8 @@ char* filepath_join(const char *format, ...) {
         str2[len + 1] = '\0';
         strcat(path, str2);
         slash = '\0';
+        str2[0] = '\0';
     }
-
     va_end(argp);
     return(path);
 }

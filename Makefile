@@ -26,7 +26,8 @@ SRC  = $(wildcard src/*.c)
 OBJS = filepath-join.o example.o
 
 .PHONY:
-all: $(TARGET)
+all: $(TARGET) $(OBJS)
+	rm *.o
 
 # compile all object files into TARGET
 .PHONY:
