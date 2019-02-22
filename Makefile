@@ -1,8 +1,8 @@
 # Created by: WestleyR
 # email: westleyr@nym.hush.com
-# Date: Feb 16, 2019
+# Date: Feb 21, 2019
 # https://github.com/WestleyR/filepath-join
-# version-1.0.0
+# version-1.0.1
 #
 # The Clear BSD License
 #
@@ -15,7 +15,7 @@
 # your c compiler
 CC = gcc
 
-CFLAG = -I src
+CFLAG =
 
 # your output file
 TARGET = example
@@ -26,8 +26,7 @@ SRC  = $(wildcard src/*.c)
 OBJS = filepath-join.o example.o
 
 .PHONY:
-all: $(TARGET) $(OBJS)
-	rm *.o
+all: $(TARGET)
 
 # compile all object files into TARGET
 .PHONY:
@@ -40,13 +39,19 @@ $(OBJS): $(SRC)
 	$(CC) -c src/filepath-join.c
 	$(CC) -c example.c
 
-
 .PHONY:
 clean:
 	rm -f *.o
+
+.PHONY:
+test: $(TARGET)
+	./test.sh
 
 .PHONY:
 cleanall:
 	rm -f *.o
 	rm -f example
 
+#
+# End Makefile
+#
