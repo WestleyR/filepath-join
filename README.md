@@ -7,8 +7,28 @@ Join multiple file paths with ease!
 Install using [clib](https://github.com/clibs/clib):
 
 ```
-$ clib install WestleyR/filepath-join
+clib install WestleyR/filepath-join
 ```
+
+### Install the exutibal:
+
+```
+git clone https://github.com/WestleyR/filepath-join
+cd filepath-join/cmd
+make
+make test  # optnal
+sudo make install
+```
+
+*Or using clib:*
+
+```
+clib install WestleyR/filepath-join/cmd
+```
+
+Now you should have a command: `filepath-join`, run `man filepath-join` for help.
+
+<br>
 
 ## Example
 
