@@ -1,0 +1,172 @@
+#!/bin/sh
+# Created by: WestleyR
+# email: westleyr@nym.hush.com
+# Date: Feb 22, 2018
+# https://github.com/WestleyR/filepath-join
+# Version-1.0.0
+#
+# The Clear BSD License
+#
+# Copyright (c) 2019 WestleyR
+# All rights reserved.
+#
+# This software is licensed under a Clear BSD License.
+#
+
+pl --info "Starting tests..."
+pl
+
+# the total number of tests
+SCORE=10
+
+START_SCORE=$SCORE
+
+exp="0"
+input=""
+out=`./filepath-join`
+if [ "$exp" != "$?" ]; then
+    pl --red "Test failed: 1"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: $?"
+    pl "Command used: " --yellow "./filepath-join"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 1. Tests passed."
+fi
+
+exp="hello/world"
+input="hello/// world///"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 2"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 2. Tests passed."
+fi
+
+exp="/hello/world"
+input="/hello/// world///"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 3"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 3. Tests passed."
+fi
+
+exp="/hello/world"
+input="///hello/// world///"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 4"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 4. Tests passed."
+fi
+
+exp="/hello/world/"
+input="///hello/// /// ///world/// ///"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 5"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 5. Tests passed."
+fi
+
+exp="/hello/world"
+input="/hello world"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 6"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 6. Tests passed."
+fi
+
+exp="/hello/world/foo/bar/file"
+input="/hello world foo bar file/"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 7"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 7. Tests passed."
+fi
+
+exp="/hello/world/foo/bar/file/1/2/3/4/5/6/7/8/9/0/1/2/3/4/5/6/7/8/9/0"
+input="/hello world foo bar file/ 1 2 3 4 5/6 /7/8 /9/ 0/ 1/2/ 3/ 4/ 5/6 / 7 /8/ 9 /0"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 8"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 8. Tests passed."
+fi
+
+exp="hello/world/foo/bar/file/1/2/3/4/5/6/7/8/9/0/1/2/3/4/5/6/7/8/9/0"
+input="hello world foo bar file/ 1 2 3 4 5/6 /7/8 /9/ 0/ 1/2/ 3/ 4/ 5/6 / 7 /8/ 9 /0"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 9"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 9. Tests passed."
+fi
+
+exp="foo/bar"
+input="foo bar"
+out=`./filepath-join $input`
+if [ "$exp" != "$out" ]; then
+    pl --red "Test failed: 10"
+    echo "Input: ${input}"
+    echo "Expected output: ${exp}"
+    echo "Actral output: ${out}"
+    pl "Command used: " --yellow "./filepath-join ${input}"
+    SCORE=$((SCORE-1))
+else
+    pl --green " 10. Tests passed."
+fi
+
+
+pl
+pl --cyan "Finished testing!"
+pl
+pl "Total score: ${SCORE}/${START_SCORE}"
+
+#
+# End test.sh
+#

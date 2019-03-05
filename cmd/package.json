@@ -1,0 +1,8 @@
+{
+  "name": "filepath-join",
+  "version": "master",
+  "repo": "WestleyR/filepath-join",
+  "install": "make install",
+  "uninstall": "make uninstall"
+}
+
